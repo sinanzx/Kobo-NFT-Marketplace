@@ -1,242 +1,81 @@
-# Kobo NFT Platform
+# Glamdring NFT Marketplace
 
-AI-powered NFT creation platform with advanced features including battles, collaborations, DAO governance, and trait marketplace.
+A comprehensive Web3 NFT Marketplace built with **Vite**, **React**, and **Foundry**. This platform enables users to discover, trade, and forge unique AI-generated masterpieces with real-time on-chain data and advanced trait liquidity.
 
-## Features
-
-- 🎨 **AI-Powered NFT Creation**: Generate unique NFTs using Stable Diffusion, DALL-E, and other AI models
-- 🎮 **Battle System**: Compete with your NFTs in community-voted battles
-- 🤝 **Collaborative Minting**: Create NFTs together with other artists
-- 🏛️ **DAO Governance**: Participate in platform decisions through on-chain voting
-- 🛒 **Trait Marketplace**: Buy and sell dynamic NFT traits
-- 🎁 **Gift Wrapping**: Send NFTs as gifts with custom messages
-- 📊 **Gamification**: Earn XP, unlock achievements, and complete daily challenges
-- 🔒 **GDPR Compliant**: Full data export, deletion, and consent management
-
-## Tech Stack
-
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for blazing-fast builds
-- **TailwindCSS** for styling
-- **Framer Motion** for animations
-- **RainbowKit** for wallet connection
-- **wagmi** for Ethereum interactions
-
-### Backend
-- **Supabase** for database, auth, and storage
-- **Supabase Edge Functions** for serverless API
-- **PostgreSQL** with Row Level Security (RLS)
-
-### Smart Contracts
-- **Solidity** for EVM contracts
-- **Foundry** for development and testing
-- **OpenZeppelin** for secure contract standards
-
-### AI Services
-- Hugging Face (Stable Diffusion)
-- ElevenLabs (Voice/Audio)
-- Runway ML (Video)
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+
-- pnpm (recommended) or npm
-- Git
+- [Node.js](https://nodejs.org/) (v18+)
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- [Aptos CLI](https://aptos.dev/tools/aptos-cli) (if applicable to your specific blockchain integration)
 
 ### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sinanzx/Kobo-NFT-marketplace.git
+   cd glamdring-marketplace
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/kobo-nft.git
-cd kobo-nft
+   Install frontend dependencies:
 
-# Install dependencies
-pnpm install
+Bash
 
-# Copy environment variables
-cp .env.example .env
+npm install
+Install smart contract dependencies:
 
-# Start development server
-pnpm dev
-```
+Bash
 
-### Environment Setup
+cd contracts && forge install
+Running Locally
+Start the Vite development server:
 
-1. Copy `.env.example` to `.env`
-2. Fill in your API keys (see `.env.example` for details)
-3. For development, you can use the default Supabase credentials
+Bash
 
-## Development
+npm run dev
+Open http://localhost:5173 in your browser.
 
-```bash
-# Start dev server
-pnpm dev
-
-# Run tests
-pnpm test
-
-# Run linting
-pnpm lint
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
-```
-
-## Smart Contract Development
-
-```bash
-cd contracts
-
-# Install dependencies
-forge install
-
-# Run tests
-forge test
-
-# Deploy to testnet
-forge script script/Deploy.s.sol --rpc-url sepolia --broadcast
-```
-
-## Project Structure
-
-```
-kobo-nft/
+🏗 Project Structure
+├── contracts/          # Smart contract source, tests, and deployment scripts
 ├── src/
-│   ├── components/     # React components
-│   ├── pages/          # Page components
-│   ├── lib/            # Utility functions and services
-│   ├── hooks/          # Custom React hooks
-│   ├── contexts/       # React contexts
-│   └── utils/          # Helper utilities
-├── contracts/
-│   ├── src/            # Solidity contracts
-│   ├── test/           # Contract tests
-│   └── script/         # Deployment scripts
-├── supabase/
-│   ├── migrations/     # Database migrations
-│   └── functions/      # Edge Functions
-├── docs/               # Documentation
-└── public/             # Static assets
-```
+│   ├── api/            # Backend API integrations and user verification
+│   ├── components/     # Reusable UI components (Modals, Cards, Buttons)
+│   ├── pages/          # Individual application views (Explore, Profile, Launchpad)
+│   ├── hooks/          # Custom React hooks for wallet and contract state
+│   └── providers/      # Global state providers (Wallet, GraphQL, Theme)
+├── docs/               # Technical documentation and deployment guides
+└── public/             # Static assets (images, icons, manifest)
 
-## Key Features Documentation
+✨ Key Features
+Explore Page: Real-time marketplace grid with advanced filtering for NFT listings and active auctions.
 
-### GDPR Compliance
+Trait Marketplace: Trade assets at the atomic level—buy or sell individual traits instead of whole NFTs.
 
-The platform includes comprehensive GDPR compliance features:
+Provenance Ledger: An immutable chain of custody for every asset, tracking history from forge to current owner.
 
-- **Data Export**: Users can request a complete export of their data
-- **Right to Deletion**: 30-day grace period for account deletion
-- **Consent Management**: Granular cookie and data processing consents
-- **Account Settings**: `/account-settings` page for managing privacy
+DAO Governance: Community-led protocol control allowing users to vote on active directives.
 
-See [GDPR Implementation](./docs/MAINNET_LAUNCH_CHECKLIST.md#-gdpr--privacy-compliance) for details.
+AR Viewer: Visualize your digital assets in real-world augmented reality.
 
-### Authentication
+Launchpad: Simplified minting interface for new collections and primary drops.
 
-Built with Supabase Auth:
-- Email/password authentication
-- Social login (Google, GitHub, etc.)
-- Protected routes
-- Session management
+🛡 Security & Verification
+Audit Report: See AUDIT_REPORT.md for the latest security findings.
 
-### NFT Creation
+Verification: Detailed verification steps are located in VERIFICATION_GUIDE.md.
 
-Multiple creation modes:
-- AI-generated (text-to-image)
-- Manual upload
-- Collaborative creation
-- Trait customization
+Private Keys: Ensure .env.local is listed in your .gitignore to protect sensitive information.
 
-### Battle System
+🤝 Contributing
+Contributions are what make the open-source community an amazing place to learn, inspire, and create.
 
-- Create themed battles
-- Submit NFT entries
-- Community voting with reputation weighting
-- Leaderboards and rewards
+Fork the Project
 
-### DAO Governance
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
 
-- On-chain proposal creation
-- Token-weighted voting
-- Timelock execution
-- Transparent governance
+Commit your Changes (git commit -m 'Add some AmazingFeature')
 
-## Deployment
+Push to the Branch (git push origin feature/AmazingFeature)
 
-See [Deployment Instructions](./docs/DEPLOYMENT_INSTRUCTIONS.md) for detailed production deployment guide.
+Open a Pull Request
 
-### Quick Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/kobo-nft)
-
-## Testing
-
-```bash
-# Run all tests
-pnpm test
-
-# Run tests in watch mode
-pnpm test:watch
-
-# Run E2E tests
-pnpm test:e2e
-
-# Run contract tests
-cd contracts && forge test
-```
-
-## Security
-
-- All smart contracts should be audited before mainnet deployment
-- See [Smart Contract Security](./contracts/SMART_CONTRACT_SECURITY.md)
-- See [Production Security](./docs/PRODUCTION_SECURITY.md)
-- Report vulnerabilities to security@kobo-nft.com
-
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for guidelines.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
-## Support
-
-- **Documentation**: [docs/](./docs/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/kobo-nft/issues)
-- **Email**: support@kobo-nft.com
-- **Discord**: [Join our community](https://discord.gg/kobo-nft)
-
-## Roadmap
-
-- [x] Core NFT minting
-- [x] Battle system
-- [x] Collaborative minting
-- [x] DAO governance
-- [x] Trait marketplace
-- [x] Gift wrapping
-- [x] Gamification
-- [x] GDPR compliance
-- [ ] Mobile app (React Native)
-- [ ] AR viewer enhancements
-- [ ] Multi-chain support
-- [ ] NFT fractionalization
-- [ ] Marketplace integration
-
-## Acknowledgments
-
-- OpenZeppelin for secure smart contract libraries
-- Supabase for backend infrastructure
-- RainbowKit for wallet connection
-- Hugging Face for AI models
-
----
-
-**Built with ❤️ by the Kobo team**
+📄 License
+Distributed under the MIT License. See LICENSE for more information.
