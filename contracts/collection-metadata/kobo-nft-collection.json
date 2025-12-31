@@ -1,0 +1,8 @@
+{
+  "name": "Kobo NFT Collection",
+  "description": "AI-generated and collaborative NFT artwork with copyright proofing and dynamic traits. Kobo (工房) represents a creative workshop where artists collaborate to create unique digital art with verifiable provenance and on-chain copyright protection.",
+  "image": "https://ipfs.io/ipfs/QmYourCollectionBannerImageHash",
+  "external_link": "https://kobo-nft.example.com",
+  "seller_fee_basis_points": 500,
+  "fee_recipient": "0x0000000000000000000000000000000000000000"
+}

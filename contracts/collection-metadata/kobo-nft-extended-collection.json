@@ -1,0 +1,8 @@
+{
+  "name": "Kobo NFT Extended Collection",
+  "description": "Advanced multi-modal NFT collection with provenance tracking, dynamic traits, derivative relationships, and collaborative creation features. This extended collection supports complex NFT ecosystems with full copyright proofing, C2PA manifest integration, and multi-creator royalty splits.",
+  "image": "https://ipfs.io/ipfs/QmYourExtendedCollectionBannerImageHash",
+  "external_link": "https://kobo-nft.example.com/extended",
+  "seller_fee_basis_points": 500,
+  "fee_recipient": "0x0000000000000000000000000000000000000000"
+}
