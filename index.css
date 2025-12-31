@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@layer base {
+  :root {
+    /* Industrial Tech Theme - Charcoal & Orange */
+    --background: 0 0% 11.8%; /* #1e1e1e - Charcoal Grey */
+    --foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --card: 0 0% 14.5%; /* #252525 - Dark Grey */
+    --card-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --popover: 0 0% 14.5%; /* #252525 - Dark Grey */
+    --popover-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --primary: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --primary-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --secondary: 0 0% 20%; /* #333333 - Medium Grey */
+    --secondary-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --muted: 0 0% 20%; /* #333333 - Medium Grey */
+    --muted-foreground: 0 0% 60%; /* #999999 - Light Grey */
+    --accent: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --accent-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --destructive: 0 84.2% 60.2%; /* Red for errors */
+    --destructive-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --border: 0 0% 20%; /* #333333 - Medium Grey */
+    --input: 0 0% 20%; /* #333333 - Medium Grey */
+    --ring: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --radius: 0.25rem; /* 4px - Blocky corners */
+    --chart-1: 16 84% 54%; /* Orange */
+    --chart-2: 0 0% 60%; /* Grey */
+    --chart-3: 0 0% 40%; /* Dark Grey */
+    --chart-4: 16 84% 64%; /* Light Orange */
+    --chart-5: 0 0% 80%; /* Light Grey */
+  }
+
+  .dark {
+    /* Industrial Tech Theme - Same for dark mode */
+    --background: 0 0% 11.8%; /* #1e1e1e - Charcoal Grey */
+    --foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --card: 0 0% 14.5%; /* #252525 - Dark Grey */
+    --card-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --popover: 0 0% 14.5%; /* #252525 - Dark Grey */
+    --popover-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --primary: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --primary-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --secondary: 0 0% 20%; /* #333333 - Medium Grey */
+    --secondary-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --muted: 0 0% 20%; /* #333333 - Medium Grey */
+    --muted-foreground: 0 0% 60%; /* #999999 - Light Grey */
+    --accent: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --accent-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --destructive: 0 62.8% 30.6%; /* Dark Red for errors */
+    --destructive-foreground: 240 5% 99%; /* #fcfaff - Off-White */
+    --border: 0 0% 20%; /* #333333 - Medium Grey */
+    --input: 0 0% 20%; /* #333333 - Medium Grey */
+    --ring: 16 84% 54%; /* #ea5c2a - Safety Orange */
+    --chart-1: 16 84% 54%; /* Orange */
+    --chart-2: 0 0% 60%; /* Grey */
+    --chart-3: 0 0% 40%; /* Dark Grey */
+    --chart-4: 16 84% 64%; /* Light Orange */
+    --chart-5: 0 0% 80%; /* Light Grey */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    position: relative;
+  }
+  
+  /* Blueprint Grid Background Texture */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(252, 250, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(252, 250, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Ensure content is above grid */
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Enforce Monospace for all headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono;
+  }
+}
+
+/* Glitch animation for image reveal */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out;
+}
